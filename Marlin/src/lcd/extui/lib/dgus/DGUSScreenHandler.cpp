@@ -561,7 +561,7 @@ void DGUSScreenHandler::HandleStepPerMMExtruderChanged(DGUS_VP_Variable &var, vo
         #endif
         #if ENABLED(PIDTEMPBED)
           case VP_PID_AUTOTUNE_BED:
-            sprintf_P(buf, PSTR("M303 E-1 C5 S70 U1"));
+            sprintf_P(buf, PSTR("M303 E-1 C5 S70 U1"), ExtUI::heater_t::BED);
             break;
         #endif
     }

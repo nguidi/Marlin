@@ -42,6 +42,8 @@
 
 #if ENABLED(SDSUPPORT)
 
+  static ExtUI::FileList filelist;
+
   void DGUSScreenHandler::DGUSLCD_SD_FileSelected(DGUS_VP_Variable &var, void *val_ptr) {
     uint16_t touched_nr = (int16_t)swap16(*(uint16_t*)val_ptr) + top_file;
     if (touched_nr > filelist.count()) return;
@@ -83,7 +85,7 @@
 
       case 1: // Pause
 
-        GotoScreen(MKSLCD_SCREEN_PAUSE);
+        //GotoScreen(MKSLCD_SCREEN_PAUSE);
         if (!ExtUI::isPrintingFromMediaPaused()) {
           ExtUI::pausePrint();
           //ExtUI::mks_pausePrint();
